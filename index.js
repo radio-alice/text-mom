@@ -15,7 +15,7 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-function send(){
+module.exports.send = function (){
   const mailOptions = {
     from: email, // sender address
     to: number, // list of receivers
