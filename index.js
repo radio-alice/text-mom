@@ -15,12 +15,12 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-module.exports.send = function (text){
+module.exports.send = function (message){
   const mailOptions = {
     from: email, // sender address
     to: number,
     subject: '', // Subject line
-    html: `<p>${text}</p>`// plain text body
+    text: message // plain text body
   };
 
   transporter.sendMail(mailOptions, function (err, info) {
