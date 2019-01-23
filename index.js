@@ -17,8 +17,10 @@ var transporter = nodemailer.createTransport({
 
 module.exports.send = function (text){
   const mailOptions = {
+    from: email, // sender address
     to: number,
-    html: '<p>${text}</p>'// plain text body
+    subject: '', // Subject line
+    html: '<p>'+ text +'</p>'// plain text body
   };
 
   transporter.sendMail(mailOptions, function (err, info) {
