@@ -15,9 +15,10 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-module.exports.send = function (){
+module.exports.send = function (text){
   const mailOptions = {
-    html: '<p>hey mom</p>'// plain text body
+    to: number,
+    html: '<p>${text}</p>'// plain text body
   };
 
   transporter.sendMail(mailOptions, function (err, info) {
