@@ -1,7 +1,7 @@
 var nodemailer = require('nodemailer');
 var fs = require('fs');
 
-var contents = fs.readFileSync('secrets.json')
+var contents = fs.readFileSync('secrets.json');
 var jsonContent = JSON.parse(contents);
 var email = jsonContent.email;
 var passw = jsonContent.password;
