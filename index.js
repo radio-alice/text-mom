@@ -17,9 +17,6 @@ var transporter = nodemailer.createTransport({
 
 module.exports.send = function (){
   const mailOptions = {
-    from: email, // sender address
-    to: number, // list of receivers
-    subject: '', // Subject line
     html: '<p>hey mom</p>'// plain text body
   };
 
