@@ -28,5 +28,6 @@ module.exports.send = function (text){
        console.log(err)
      else
        console.log(info);
+       console.log(text)
   });
 }
