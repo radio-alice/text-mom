@@ -20,7 +20,7 @@ module.exports.send = function (text){
     from: email, // sender address
     to: number,
     subject: '', // Subject line
-    html: '<p>'+ text +'</p>'// plain text body
+    html: '<p>'+ ${text} +'</p>'// plain text body
   };
 
   transporter.sendMail(mailOptions, function (err, info) {
