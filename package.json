@@ -1,0 +1,27 @@
+{
+  "name": "text-mom",
+  "version": "1.0.0",
+  "description": "see git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radio-alice/text-mom.git"
+  },
+  "keywords": [
+    "text",
+    "my",
+    "mom"
+  ],
+  "author": "my mom's son",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radio-alice/text-mom/issues"
+  },
+  "homepage": "https://github.com/radio-alice/text-mom#readme",
+  "dependencies": {
+    "nodemailer": "^5.1.1"
+  }
+}
