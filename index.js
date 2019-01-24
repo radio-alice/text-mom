@@ -1,30 +1,18 @@
-var nodemailer = require('nodemailer');
-var fs = require('fs');
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const sendSMS = require('./sendSMS')
+const index =
+app.use(bodyParser.urlencoded({ extended: true }))
 
-var contents = fs.readFileSync('secrets.json');
-var jsonContent = JSON.parse(contents);
-var email = jsonContent.email;
-var passw = jsonContent.password;
-var number = jsonContent.number;
-
-var transporter = nodemailer.createTransport({
- service: 'gmail',
- auth: {
-        user: email,
-        pass: passw
-    }
+app.get('/', function(req,res){
+ res.sendfile(__dirname + '/index.html');
 });
 
-module.exports.send = function (message){
-  const mailOptions = {
-    from: email, // sender address
-    to: number,
-    subject: '', // Subject line
-    text: message // plain text body
-  };
+app.post('/submit', function(req, res){
+   const message = req.body.message;
+   sendSMS.send(message);
+   res.send("recieved your request!");
+});
 
-  transporter.sendMail(mailOptions, function (err, info) {
-     if(err)
-       console.log(err)
-  });
-}
+app.listen(3000);

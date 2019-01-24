@@ -8,10 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
-
-    <!-- import the webpage's client-side javascript file -->
     <script src="/client.js" defer></script>
   </head>
   <body>
@@ -25,9 +22,9 @@
         so I need YOU to help me out. Pick out some emojis that convey my filial
         love and fire away.</p>
 
-      <form>
-        <input name="text" type="text" maxlength="5" aria-labelledby="text my mom">
-        <input type="button" value="text away">
+      <form method="POST" action="/submit">
+        <input name="message" type="text" maxlength="5" aria-labelledby="text my mom">
+        <input type="submit" value="text away">
       </form>
     </section>
   </body>
