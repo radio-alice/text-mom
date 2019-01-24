@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/radio-alice/text-mom#readme",
   "dependencies": {
-    "nodemailer": "^5.1.1",
-    "fs": "0.0.1-security"
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "nodemailer": "^5.1.1"
   }
 }

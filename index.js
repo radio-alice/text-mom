@@ -26,7 +26,5 @@ module.exports.send = function (message){
   transporter.sendMail(mailOptions, function (err, info) {
      if(err)
        console.log(err)
-     else
-       console.log(info);
   });
 }
