@@ -6,7 +6,7 @@ const sendSMS = require('./sendSMS');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req,res){
- res.sendfile(__dirname + '/index.html');
+ res.sendFile(__dirname + '/index.html');
 });
 
 app.post('/submit', function(req, res){
