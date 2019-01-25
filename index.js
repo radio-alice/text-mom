@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const sendSMS = require('./sendSMS');
+const emojify = require('./emojify');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -11,8 +12,9 @@ app.get('/', function(req,res){
 
 app.post('/submit', function(req, res){
    const message = req.body.message;
-   sendSMS.send(message);
-   res.send("recieved your request!");
+   const emojMessage = emojify.clean(message);
+   sendSMS.send(emojMessage);
+   res.send(emojMessage + "? u got it buddy!");
 });
 
 app.listen(3000);
