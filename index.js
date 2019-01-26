@@ -13,8 +13,12 @@ app.get('/', function(req,res){
 app.post('/submit', function(req, res){
    const message = req.body.message;
    const emojMessage = emojify.clean(message);
-   sendSMS.send(emojMessage);
-   res.send(emojMessage + "? u got it buddy!");
+   if (emojMessage !== '') {
+     sendSMS.send(emojMessage);
+     res.send(emojMessage + "? u got it buddy!");
+   } else {
+     res.send('uhh try again buddy');
+   }
 });
 
 app.listen(3000);
