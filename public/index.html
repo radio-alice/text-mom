@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Text My Mom!</title>
+    <meta name="description" content="A cool way to text my mom">
+    <link id="favicon" rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/main.css" type="text/css">
+  </head>
+  <body>
+    <section id="main" role="main">
+      <div class="title"><h1>Text My Mom for Me</h1></div>
+      <div class="blurb"><p>I'm a busy guy. Between writing
+        my thesis, taking enough classes to graduate, making
+        the net cool again, and stressing about the impending
+        apocalypse, I've got a lot on my plate. Sometimes I
+        don't have time to text my mom,so I figured that I could
+        crowd-source it. Pick out some emojis that will make my
+        mom forget I haven't called in a month and fire away.
+        [u gotta do emojis]</p></div>
+
+      <form method="POST" action="/submit" autocomplete="off">
+        <div class="form">
+          <input class="fill-width" name="message" type="text"
+          maxlength="11" aria-labelledby="text my mom">
+          <input type="submit" value="text away">
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

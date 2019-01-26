@@ -1,0 +1,18 @@
+#main {
+  margin: auto;
+  width: 90%;
+  padding: 20px
+}
+
+.form {
+  position: absolute;
+  bottom: 20px;
+  margin: auto;
+  display: flex;
+  width: 90%;
+}
+
+.fill-width {
+  flex: 1;
+  text-align: center;
+}
