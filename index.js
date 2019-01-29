@@ -7,9 +7,9 @@ const emojify = require('./js/emojify');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// app.get('/', function(req,res){
-//  res.sendFile(__dirname + '/index.html');
-// });
+app.get('/', function(req,res){
+  res.sendFile(__dirname + '/index.html');
+});
 
 app.post('/submit', function(req, res){
    const message = req.body.message;
