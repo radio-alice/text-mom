@@ -63,3 +63,4 @@ typings/
 
 # nothing to see here
 secrets.json
+.DS_Store
