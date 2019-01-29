@@ -1,18 +1,46 @@
-#main {
-  margin: auto;
-  width: 90%;
-  padding: 20px
+body {
+  background-color: #DCDCDD;
+  background-image: url(/links:images/dove.gif);
+  background-repeat: repeat;
 }
-
+#main {
+  padding: 10px;
+  margin: auto;
+}
 .form {
   position: absolute;
   bottom: 20px;
   margin: auto;
   display: flex;
-  width: 90%;
+  flex-direction: column;
+  width: 95%;
 }
-
 .fill-width {
-  flex: 1;
   text-align: center;
+  margin: auto;
+  width: 90%;
+  font-size: 30px;
+  margin-bottom: 8px;
 }
+.butt {
+  margin: auto;
+  width: 30%;
+}
+.title {
+  font-family: 'Baloo Thambi', cursive;
+  font-size: 70px;
+  margin: auto;
+  text-align: center;
+  color: #FF312E;
+}
+.blurb {
+  width: 80%;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  color: #333138;
+}
+h1 {
+  margin: 0px;
+}
+a:visited {color: #FF312E}
+a {color: #FF312E}
