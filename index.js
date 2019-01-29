@@ -1,8 +1,8 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const sendSMS = require('./js/sendSMS');
-const emojify = require('./js/emojify');
+var express = require('express');
+var bodyParser = require('body-parser');
+var app = express();
+var sendSMS = require('./js/sendSMS');
+var emojify = require('./js/emojify');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
