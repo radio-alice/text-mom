@@ -1,11 +1,10 @@
 const express = require('express');
-var bodyParser = require('body-parser');
 var app = express();
 var sendSMS = require('./js/sendSMS');
 var emojify = require('./js/emojify');
 
 app.use(express.urlencoded());
-app.use('/', express.static('/mom/public'));
+app.use('/mom', express.static('public'));
 app.get('/mom', function(req,res){
   res.sendFile(__dirname + '/public/index.html');
 });
