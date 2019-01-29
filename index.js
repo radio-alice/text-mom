@@ -6,11 +6,9 @@ const emojify = require('./js/emojify');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
-
 app.get('/', function(req,res){
   res.sendFile(__dirname + '/index.html');
 });
-
 app.post('/submit', function(req, res){
    const message = req.body.message;
    const emojMessage = emojify.clean(message);
@@ -21,5 +19,5 @@ app.post('/submit', function(req, res){
      res.send('uhh try again buddy');
    }
 });
-
 app.listen(3000);
+console.log('Server running at http://localhost:3000/');
