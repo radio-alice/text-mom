@@ -5,9 +5,9 @@ var sendSMS = require('./js/sendSMS');
 var emojify = require('./js/emojify');
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', express.static('public'));
+app.use('/', express.static('/public'));
 app.get('/', function(req,res){
-  res.sendFile(__dirname + 'public/index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 app.post('/submit', function(req, res){
    const message = req.body.message;
