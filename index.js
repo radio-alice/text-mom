@@ -5,7 +5,7 @@ var sendSMS = require('./js/sendSMS');
 var emojify = require('./js/emojify');
 
 app.use(express.urlencoded());
-app.use('/', express.static('/public'));
+app.use(express.static(__dirname + '/public'));
 app.get('/mom', function(req,res){
   res.sendFile(__dirname + '/public/index.html');
 });
