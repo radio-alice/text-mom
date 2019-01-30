@@ -1,5 +1,5 @@
-var nodemailer = require('nodemailer');
-var fs = require('fs');
+const nodemailer = require('nodemailer');
+const fs = require('fs');
 
 var contents = fs.readFileSync('secrets.json');
 var jsonContent = JSON.parse(contents);
@@ -24,7 +24,7 @@ module.exports.send = function (message){
   };
 
   transporter.sendMail(mailOptions, function (err, info) {
-     if(err)
-       console.log(err)
+     if(err) console.log(err);
+     console.log(info)
   });
 }
