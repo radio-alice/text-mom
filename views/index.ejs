@@ -17,14 +17,22 @@
         don't have time to text my mom, so I figured I'd
         crowd-source it. Pick out some emojis that will make my
         mom forget I haven't called in a month and fire away.
-        [u gotta do <a href="emojis.txt">emojis</a>]</p></div>
+        [u gotta do 1-5 <a href="emojis.txt">emojis</a>]</p></div>
+      <div class="convo">
+        <ul>
+          <% messages.forEach(function(message){ %>
+            <li><%= message %></li>
+          <% }) %>
+          <li>mimimimi test</li>
+        </ul>
 
+      </div>
       <form method="POST" action="/submit" autocomplete="off">
         <div class="form">
           <input class="fill-width" name="message" type="text"
-          maxlength="11" aria-labelledby="text my mom">
+          pattern=".{1,5}" aria-labelledby="text my mom" required>
           <input type="submit" value="text away" class="butt"
-          src="/text.svg">
+          src="text.svg">
         </div>
       </form>
     </section>

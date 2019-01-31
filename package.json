@@ -23,6 +23,8 @@
   "homepage": "https://github.com/radio-alice/text-mom#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "choo": "^6.13.1",
+    "ejs": "^2.6.1",
     "emoji-regex": "^7.0.3",
     "express": "^4.16.4",
     "express-validator": "^5.3.1",

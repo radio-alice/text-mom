@@ -10,7 +10,7 @@ exports.message_create = function (req, res) {
       let message = new Message(
           {
               time: req.time,
-              message: req.body.message,
+              message: emojMessage,
               sent: true
           }
       );
@@ -24,6 +24,13 @@ exports.message_create = function (req, res) {
       res.send('uhh try again buddy');
     }
   };
+
+exports.findAll = function(done) {
+  Message.find((err, data) => {
+  if (err) done(err);
+  done(null, data);
+  })
+};
 
 exports.test = function (req, res) {
     res.send('Greetings from the Test controller!');

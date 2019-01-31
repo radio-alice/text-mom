@@ -7,5 +7,8 @@ module.exports.clean = function (text){
   while ((singleEmoji = regex.exec(text)) !== null) {
     cleaned += singleEmoji[0];
   };
+  while (cleaned.length > 5) {
+    cleaned.pop();
+  }
   return cleaned;
 }
