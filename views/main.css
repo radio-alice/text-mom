@@ -39,12 +39,17 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #333138;
 }
-h1 {
-  margin: 0px;
-}
+span {background-color: #DCDCDD;}
+h1 {margin: 0px;}
 a:visited {color: #FF312E}
 a {color: #FF312E}
 .convo {
   margin: auto;
+  overflow: scroll;
   width: 60%;
+  height: 400px;
+}
+.message{
+  height: 80px;
+  text-align: center;
 }

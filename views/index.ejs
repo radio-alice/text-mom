@@ -9,23 +9,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Roboto" rel="stylesheet">
+    <script>
+      window.onload = function(){
+        var convo = document.getElementById('convo');
+        convo.scrollTop = convo.scrollHeight;
+      }
+    </script>
   </head>
   <body>
     <section id="main" role="main">
       <div class="title"><h1>Text My Mom for Me</h1></div>
-      <div class="blurb"><p>I'm a busy guy. Usually I
+      <div class="blurb"><span>I'm a busy guy. Usually I
         don't have time to text my mom, so I figured I'd
         crowd-source it. Pick out some emojis that will make my
         mom forget I haven't called in a month and fire away.
-        [u gotta do 1-5 <a href="emojis.txt">emojis</a>]</p></div>
-      <div class="convo">
-        <ul>
-          <% messages.forEach(function(message){ %>
-            <li><%= message %></li>
-          <% }) %>
-          <li>mimimimi test</li>
-        </ul>
-
+        [u gotta do 1-5 <a href="emojis.txt">emojis</a>]</span></div>
+      <div class="convo" id="convo">
+        <% messages.forEach(function(message){ %>
+          <div class="message"><span><%= message %></span></div>
+        <% }) %>
       </div>
       <form method="POST" action="/submit" autocomplete="off">
         <div class="form">
