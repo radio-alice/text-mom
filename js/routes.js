@@ -12,11 +12,12 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 router.use('/mom', express.static(path.join(__dirname, '../views')));
 
 router.get('/mom', function(req,res, next){
-  // let messages = [];
+  let messages = [];
   message_controller.findAll(function(err, messages){
     if (err) console.log(err);
-    res.render('index.ejs', {messages : messages});
-  });
+    var cleanMessages = messages.map(x => x.message);
+    res.render('index.ejs', {messages : cleanMessages});
+  })
 });
 router.get('/test', message_controller.test);
 router.post('/submit', message_controller.message_create);
