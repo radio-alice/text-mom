@@ -26,7 +26,7 @@ exports.message_create = function (req, res) {
   };
 
 exports.findAll = function(done) {
-  Message.find({}, 'message -_id', (err, data) => {
+  Message.find({}, 'message sent -_id', (err, data) => {
             if (err) done(err);
             done(null, data);
   })

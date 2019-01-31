@@ -25,14 +25,18 @@
         mom forget I haven't called in a month and fire away.
         [u gotta do 1-5 <a href="emojis.txt">emojis</a>]</span></div>
       <div class="convo" id="convo">
-        <% messages.forEach(function(message){ %>
-          <div class="message"><span><%= message %></span></div>
+        <% messages.forEach(function(messageObject){ %>
+          <% if (messageObject.sent === true) { %>
+            <div class="out"><span><%= messageObject.message %></span></div>
+          <% } else { %>
+            <div class="in"><span><%= messageObject.message %></span></div>
+          <% } %>
         <% }) %>
       </div>
       <form method="POST" action="/submit" autocomplete="off">
         <div class="form">
           <input class="fill-width" name="message" type="text"
-          pattern=".{1,5}" aria-labelledby="text my mom" required>
+            aria-labelledby="text my mom" required>
           <input type="submit" value="text away" class="butt"
           src="text.svg">
         </div>
