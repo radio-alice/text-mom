@@ -4,27 +4,23 @@ body {
   background-repeat: repeat;
   margin: 0px;
 }
-#main {
-  padding: 10px;
-  margin: auto;
-}
+#main {margin: auto;}
 .form {
-  position: absolute;
   bottom: 20px;
   margin: auto;
   display: flex;
-  flex-direction: column;
-  width: 95%;
+  width: 70%;
 }
 .fill-width {
   text-align: center;
   margin: auto;
-  width: 90%;
-  font-size: 30px;
-  margin-bottom: 8px;
+  width: 70%;
+  font-size: 40px;
+  border-style: double;
+  border-color: #FF312E;
+  border-width: thick;
 }
 .butt {
-  margin: auto;
   width: 30%;
 }
 .title {
@@ -35,11 +31,12 @@ body {
   color: #FF312E;
 }
 .blurb {
-  width: 60%;
+  width: 70%;
   margin: auto;
-  text-align: center;
+  text-align: left;
   font-family: 'Roboto', sans-serif;
   color: #333138;
+  padding: 5px;
 }
 span {background-color: #ffff00;}
 h1 {margin: 0px;}
@@ -48,16 +45,27 @@ a {color: #FF312E}
 .convo {
   margin: auto;
   overflow: scroll;
-  width: 60%;
+  width: 70%;
   height: 400px;
+  padding: 5px;
+  background-color: rgba(65,65,76,.7);
+  margin-bottom: 8px;
 }
 .out{
+  text-align: right;
   margin: 30px;
   font-size: 30px;
-  text-align: right;
 }
 .in{
+  text-align: left;
   margin: 30px;
   font-size: 30px;
-  text-align: left;
+  font-family: 'Homemade Apple', cursive;
+  font-weight: bold;
+}
+.label{
+  margin: 2px;
+  font-size: 12px;
+  font-family: serif;
+  font-weight: normal;
 }
