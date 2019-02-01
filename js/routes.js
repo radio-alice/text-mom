@@ -26,7 +26,8 @@ router.get('/mom', function(req,res, next){
     res.render('index.ejs', {messages : messages});
   })
 });
-router.get('/test', message_controller.test);
-router.post('/submit', message_controller.message_create);
+
+router.get('/mom/test', message_controller.test);
+router.post('/mom/submit', message_controller.message_create);
 
 module.exports = router;
