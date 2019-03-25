@@ -9,14 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Roboto|Homemade+Apple" rel="stylesheet">
-  </head>
-  <body>
     <script>
       window.onload = function(){
         var convo = document.getElementById('convo');
         convo.scrollTop = convo.scrollHeight;
+        var message_strings = document.getElementsByTagName('span');
+        for (let i = 0; i < message_strings; i++){
+          htmlDecode(message_strings[i].innerHTML);
+        }
+      }
+      function htmlDecode(input){
+          var doc = new DOMParser().parseFromString(input, "text/html");
+          return doc.documentElement.textContent;
       }
     </script>
+  </head>
+  <body>
     <section id="main" role="main">
       <div class="title"><h1>Text My Mom for Me</h1></div>
       <div class="blurb"><span>I'm a busy guy. Usually I
@@ -26,19 +34,15 @@
         [u gotta do <a href="emojis.txt">emojis</a> and u can
         only text her once every 5 min]</span></div>
       <div class="convo" id="convo">
-        <% function htmlDecode(input){
-            var doc = new DOMParser().parseFromString(input, "text/html");
-            return doc.documentElement.textContent;
-        } %>
         <% messages.forEach(function(messageObject){ %>
           <% if (messageObject.sent === true) { %>
             <div class="out">
-              <span><%= htmlDecode(messageObject.message) %></span>
+              <span><%= messageObject.message %></span>
               <div class="label"><span>you guys</span></div>
             </div>
           <% } else { %>
             <div class="in">
-              <span><%= htmlDecode(messageObject.message) %></span><br>
+              <span><%= messageObject.message %></span><br>
               <div class="label"><span>my mom</span></div>
             </div>
           <% } %>
