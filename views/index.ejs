@@ -15,7 +15,8 @@
         convo.scrollTop = convo.scrollHeight;
         var message_strings = document.getElementsByTagName('span');
         for (let i = 0; i < message_strings; i++){
-          htmlDecode(message_strings[i].innerHTML);
+          text = htmlDecode(message_strings[i].innerHTML);
+          message_strings[i].innerHTML = text;
         }
       }
       function htmlDecode(input){
