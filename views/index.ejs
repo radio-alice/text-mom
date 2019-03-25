@@ -26,16 +26,15 @@
         [u gotta do <a href="emojis.txt">emojis</a> and u can
         only text her once every 5 min]</span></div>
       <div class="convo" id="convo">
-        <% const he = require('he'); %>
         <% messages.forEach(function(messageObject){ %>
           <% if (messageObject.sent === true) { %>
             <div class="out">
-              <span><%= he.decode(messageObject.message) %></span>
+              <span><%- messageObject.message) %></span>
               <div class="label"><span>you guys</span></div>
             </div>
           <% } else { %>
             <div class="in">
-              <span><%= he.decode(messageObject.message) %></span><br>
+              <span><%- messageObject.message %></span><br>
               <div class="label"><span>my mom</span></div>
             </div>
           <% } %>
