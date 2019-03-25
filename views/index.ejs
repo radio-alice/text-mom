@@ -16,10 +16,6 @@
         var convo = document.getElementById('convo');
         convo.scrollTop = convo.scrollHeight;
       }
-      function htmlDecode(input){
-          var doc = new DOMParser().parseFromString(input, "text/html");
-          return doc.documentElement.textContent;
-      }
     </script>
     <section id="main" role="main">
       <div class="title"><h1>Text My Mom for Me</h1></div>
@@ -30,6 +26,10 @@
         [u gotta do <a href="emojis.txt">emojis</a> and u can
         only text her once every 5 min]</span></div>
       <div class="convo" id="convo">
+        <% function htmlDecode(input){
+            var doc = new DOMParser().parseFromString(input, "text/html");
+            return doc.documentElement.textContent;
+        } %>
         <% messages.forEach(function(messageObject){ %>
           <% if (messageObject.sent === true) { %>
             <div class="out">
