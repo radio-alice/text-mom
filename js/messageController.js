@@ -7,9 +7,9 @@ exports.message_create = function (req, res) {
   var emojMessage = emojify.clean(messageToSend);
   findRecent((err, data) => {
     if (err) throw err;
-    // var tPlusFive = new Date(data.time.getTime() + 300000);
-    // req.time = new Date();  
-    // if (tPlusFive < req.time){
+    var tPlusFive = new Date(data.time.getTime() + 300000);
+    req.time = new Date();
+    if (tPlusFive < req.time){
     if (emojMessage !== '') {
       let message = new Message(
           {
@@ -27,9 +27,9 @@ exports.message_create = function (req, res) {
     } else {
       res.send('uhh try again buddy');
     }
-    // } else {
-    //   res.send('uhh try again in a little bit buddy you guys are really double-texting too much');
-    // }
+    } else {
+      res.send('uhh try again in a little bit buddy you guys are really double-texting too much');
+    }
   })
 };
 
