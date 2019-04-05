@@ -8,7 +8,7 @@ exports.message_create = function (req, res) {
   findRecent((err, data) => {
     if (err) throw err;
     // var tPlusFive = new Date(data.time.getTime() + 300000);
-    // req.time = new Date();
+    // req.time = new Date();  
     // if (tPlusFive < req.time){
     if (emojMessage !== '') {
       let message = new Message(
