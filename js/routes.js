@@ -19,7 +19,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 router.use('/mom', express.static(path.join(__dirname, '../views')));
 
-router.get('/mom', function(req,res, next){
+router.get('/mom', function(req, res, next){
   let messages = [{}];
   message_controller.findAll(function(err, messages){
     if (err) console.log(err);
@@ -27,7 +27,6 @@ router.get('/mom', function(req,res, next){
   })
 });
 
-router.get('/mom/test', message_controller.test);
 router.post('/mom/submit', message_controller.message_create);
 
 module.exports = router;

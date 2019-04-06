@@ -10,23 +10,23 @@ exports.message_create = function (req, res) {
     var tPlusFive = new Date(data.time.getTime() + 300000);
     req.time = new Date();
     if (tPlusFive < req.time){
-    if (emojMessage !== '') {
-      let message = new Message(
-          {
-              time: req.time,
-              message: emojMessage,
-              sent: true
-          }
-      );
-      message.save(function(err) {
-        if (err) return next(err);
-        console.log(message);
-        sendSMS.send(emojMessage);
-        res.send(emojMessage + "? u got it buddy!");
-      })
-    } else {
-      res.send('uhh try again buddy');
-    }
+      if (emojMessage !== '') {
+        let message = new Message(
+            {
+                time: req.time,
+                message: emojMessage,
+                sent: true
+            }
+        );
+        message.save(function(err) {
+          if (err) return next(err);
+          console.log(message);
+          sendSMS.send(emojMessage);
+          res.send(emojMessage + "? u got it buddy!");
+        })
+      } else {
+        res.send('uhh try again buddy');
+      }
     } else {
       res.send('uhh try again in a little bit buddy you guys are really double-texting too much');
     }
@@ -39,7 +39,6 @@ function findRecent(done){
             done(null, data);
   })
 }
-
 
 exports.findAll = function(done) {
   Message.find({}, 'message sent -_id', (err, data) => {
